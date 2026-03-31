@@ -1,2 +1,26 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #FAFAF8; }
+body { background: #0D1117; }
+
+@media (max-width: 768px) {
+  /* Header: stack title and player toggle */
+  .header-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .player-toggle {
+    align-self: start !important;
+  }
+  /* Main 3-col layout: single column */
+  .main-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Leaderboard cards + calendar: full width */
+  .leaders-grid {
+    grid-column: 1 / -1 !important;
+    grid-template-columns: 1fr !important;
+  }
+  /* Calendar day cells smaller text */
+  .calendar-grid {
+    gap: 2px !important;
+  }
+}

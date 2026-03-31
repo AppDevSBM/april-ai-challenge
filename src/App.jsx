@@ -30,20 +30,20 @@ export default function App(){
     <div style={{background:"#0D1117",minHeight:"100vh",fontFamily:"'IBM Plex Mono',monospace"}}>
       <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
       <div style={{maxWidth:1100,margin:"0 auto",padding:"20px 24px"}}>
-        <div style={{display:"grid",gridTemplateColumns:"1fr auto",alignItems:"start",gap:24,marginBottom:16,paddingBottom:16,borderBottom:"1px solid #21262D"}}>
+        <div className="header-grid" style={{display:"grid",gridTemplateColumns:"1fr auto",alignItems:"start",gap:24,marginBottom:16,paddingBottom:16,borderBottom:"1px solid #21262D"}}>
           <div>
             <div style={{fontSize:9,letterSpacing:"0.25em",color:TEAL,marginBottom:6}}>// APRIL 2026 · 30-DAY CHALLENGE</div>
             <div style={{fontSize:"clamp(28px,4vw,42px)",fontWeight:700,color:"#E6EDF3",lineHeight:1.0,letterSpacing:"-0.02em"}}>APRIL <span style={{color:TEAL}}>AI CHALLENGE</span></div>
             <div style={{fontSize:10,color:"#6E7681",letterSpacing:"0.1em",marginTop:4}}>SIMON vs PRINCESS NIKKI — WHO FINISHES FIRST?</div>
           </div>
-          <div style={{display:"flex",gap:0,border:"1px solid #21262D",borderRadius:6,overflow:"hidden",alignSelf:"center"}}>
+          <div className="player-toggle" style={{display:"flex",gap:0,border:"1px solid #21262D",borderRadius:6,overflow:"hidden",alignSelf:"center"}}>
             <PlayerBtn label="SIMON" player="simon" current={player} onClick={()=>setPlayer("simon")}/>
             <PlayerBtn label="PRINCESS NIKKI" player="nikki" current={player} onClick={()=>setPlayer("nikki")}/>
           </div>
         </div>
         {nudge&&<div style={{borderRadius:5,padding:"8px 14px",fontSize:10,marginBottom:12,letterSpacing:"0.08em",background:nudge.player==="simon"?TEAL+"11":PINK+"11",color:nudge.player==="simon"?TEAL:PINK,border:"1px solid "+(nudge.player==="simon"?TEAL+"33":PINK+"33")}}>{nudge.msg}</div>}
-        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 340px",gap:16,alignItems:"start"}}>
-          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12,gridColumn:"1/3"}}>
+        <div className="main-grid" style={{display:"grid",gridTemplateColumns:"1fr 1fr 340px",gap:16,alignItems:"start"}}>
+          <div className="leaders-grid" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12,gridColumn:"1/3"}}>
             <LeaderCard player="simon" data={sd} leading={sc>nc}/>
             <LeaderCard player="nikki" data={nd} leading={nc>sc}/>
             <div style={{gridColumn:"1/3",background:"#161B22",border:"1px solid #21262D",borderRadius:8,padding:"14px 16px"}}>
